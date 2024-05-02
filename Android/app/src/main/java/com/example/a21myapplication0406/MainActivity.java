@@ -58,11 +58,6 @@ public class MainActivity extends AppCompatActivity {
     //문자열 "1"은 dht 온습도 센서
     //문자열 "2"는 체온
 
-    int c;
-
-
-
-
     public static Context funC;
 
 
