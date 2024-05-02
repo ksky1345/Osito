@@ -16,6 +16,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -469,8 +470,19 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
+
+
+
     void showToast(String str){
-        Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run()
+            {
+                Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+            }
+        }, 100);
+
     }
 
     public void alart(){
@@ -498,33 +510,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
